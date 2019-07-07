@@ -35,8 +35,6 @@ function hasNumberLetter(str) {
 }
 
 async function checkPassword_Parallel_Flow(str) {
-  let firstTime = Date.now();
- 
 
   let checkLength = isMatchLength(str);
   let checkCapitalize = hasCapitalizeLetter(str);
@@ -45,9 +43,7 @@ async function checkPassword_Parallel_Flow(str) {
 
   let isMatch = await checkLength && await checkCapitalize && await checkNumber;
 
-  let secondTime = Date.now();
-  console.log(secondTime - firstTime);
-  return isMatch;
+  return Boolean(isMatch);
 }
 
 async function checkPassword_Serial_Flow(str) {
@@ -64,12 +60,8 @@ async function checkPassword_Serial_Flow(str) {
   return isMatch;
 }
 
-checkPassword_Serial_Flow('lecam16T1').then(result => {
-  console.log('Serial Flow: ', result);
-});
+checkPassword_Parallel_Flow('ASDSSSSSSSSS21').then(res=>console.log(res));
 
-checkPassword_Parallel_Flow('lecam16T1').then(result => {
-  console.log('Parrallel Flow: ', result);
-});
+module.exports = checkPassword_Parallel_Flow;
 
 
