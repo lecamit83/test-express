@@ -12,6 +12,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "lodash": "^4.17.11",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "mongoose": "^5.6.3"
   }
 }

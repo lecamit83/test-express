@@ -1,11 +1,11 @@
 const _ = require('lodash');
-
+const TIME_DELAY = 10;
 function isMatchLength(str){
   return new Promise(function(resolve , reject){
     setTimeout(() => {
       let result = 6 < str.length && str.length < 30;
       resolve(result);
-    }, 1000);
+    }, TIME_DELAY);
   });
 }
 
@@ -18,7 +18,7 @@ function hasCapitalizeLetter(str) {
         return (element <= 'Z' && element >= 'A');
       });
       resolve(result);
-    }, 1000);
+    }, TIME_DELAY);
   });
 }
 
@@ -30,7 +30,7 @@ function hasNumberLetter(str) {
         return (element <= '9' && element >= '0');
       });
       resolve(result);
-    }, 1000);
+    }, TIME_DELAY);
   });
 }
 
